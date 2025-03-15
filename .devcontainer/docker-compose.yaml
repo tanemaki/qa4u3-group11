@@ -7,4 +7,5 @@ services:
       PYTHONPATH: /workspace
     volumes:
       - ..:/workspace
+      - ${LOCAL_DATASETS_PATH}:/datasets:cached
     command: sleep infinity
