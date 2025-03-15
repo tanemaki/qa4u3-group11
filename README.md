@@ -5,7 +5,6 @@
 ## 使用ツール
 
 - プロジェクト作成＆Pythonパッケージマネージャー [uv](https://docs.astral.sh/uv/)
-- タスクランナー [Invoke](http://www.pyinvoke.org/)
 - コード整形など [Ruff](https://docs.astral.sh/ruff/)
 
 ## はじめての使い方
