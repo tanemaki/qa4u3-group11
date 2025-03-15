@@ -6,5 +6,6 @@ readme = "README.md"
 requires-python = ">=3.12.8"
 dependencies = [
     "opencv-python>=4.11.0.86",
+    "scikit-learn>=1.6.1",
     "streamlit>=1.43.2",
 ]
