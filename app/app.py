@@ -18,7 +18,10 @@ def app():
 
     pixels = image.reshape(-1, 3)
 
-    binarization_method = st.sidebar.radio("バイナリ化手法", ["k-means", "otsu", "adaptive", "manual"], index=0)
+    binarization_method = st.sidebar.radio(
+        "バイナリ化手法", ["k-means", "otsu", "adaptive", "manual"], index=0
+    )
+
     if binarization_method == "k-means":
         model = sklearn.cluster.KMeans(n_clusters=2)
         model.fit(pixels)
@@ -38,6 +41,15 @@ def app():
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         _, mask = cv2.threshold(gray, threshold, 255, cv2.THRESH_BINARY)
 
+        mask = cv2.bitwise_not(mask)
+
+    # オープニング処理でノイズを除去
+    kernel_size = st.sidebar.slider(
+        "カーネルサイズ", min_value=1, max_value=50, value=5
+    )
+    mask = cv2.morphologyEx(
+        mask, cv2.MORPH_OPEN, kernel=np.ones((kernel_size, kernel_size))
+    )
 
     columns = st.columns(2)
     columns[0].image(
