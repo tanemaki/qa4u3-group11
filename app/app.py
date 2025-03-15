@@ -2,7 +2,7 @@ import streamlit as st
 
 
 def app():
-    st.title("Hello World!")
+    st.title("たべっ子水族館へようこそ！")
 
 
 if __name__ == "__main__":
