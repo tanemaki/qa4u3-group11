@@ -1,4 +1,5 @@
 import glob
+import os
 
 import cv2
 import numpy as np
@@ -9,7 +10,8 @@ import streamlit as st
 def app():
     st.title("たべっ子水族館へようこそ！")
 
-    image_paths = sorted(glob.glob("/datasets/tabekko_suizokukan/images/250314a/*"))
+    image_path = st.text_input("画像ディレクトリ", "/datasets/tabekko_suizokukan/images/250314a")
+    image_paths = sorted(glob.glob(os.path.join(image_path, '*.jpg')))
     image_index = st.sidebar.number_input(
         "イメージ番号", min_value=0, max_value=len(image_paths) - 1
     )
@@ -19,7 +21,7 @@ def app():
     pixels = image.reshape(-1, 3)
 
     binarization_method = st.sidebar.radio(
-        "バイナリ化手法", ["k-means", "otsu", "adaptive", "manual"], index=0
+        "バイナリ化手法", ["k-means", "otsu", "adaptive", "manual"], index=3
     )
 
     if binarization_method == "k-means":
@@ -37,7 +39,7 @@ def app():
             gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2
         )
     elif binarization_method == "manual":
-        threshold = st.sidebar.slider("しきい値", min_value=0, max_value=255, value=128)
+        threshold = st.sidebar.slider("閾値", min_value=0, max_value=255, value=128)
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         _, mask = cv2.threshold(gray, threshold, 255, cv2.THRESH_BINARY)
 
