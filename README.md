@@ -9,15 +9,16 @@
 
 ## はじめての使い方
 
+1. [Docker Desktop](https://www.docker.com/ja-jp/products/docker-desktop/)をインストールし、起動します。
 1. このリポジトリをクローンします。
-2. VS Codeを開きます。
-3. [Dev ContainersというVS Codeの拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)をインストールします。
-4. 左下の「><」をクリックして、コマンドパレットを開きます。
-5. `Remote-Containers: Reopen in Container`を選択します。
-6. コンテナの起動と同時に新しいウィンドウが開き、画面左下に「開発コンテナ: python @ desktop-linux」と表示されているのを確認します。
-7. ターミナルを開いて、`(workspace) root@9dd39b93510f:/workspace#`のように表示されていることを確認します。
-8. `python --version`を実行してPythonのバージョンが`Python 3.12.8`と表示されることを確認します。
-9. `streamlit run app/app.py`を実行して、アプリが起動したら成功です。やったね！
+1. VS Codeを開きます。
+1. [Dev ContainersというVS Codeの拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)をインストールします。
+1. 左下の「><」をクリックして、コマンドパレットを開きます。
+1. `Remote-Containers: Reopen in Container`を選択します。
+1. コンテナの起動と同時に新しいウィンドウが開き、画面左下に「開発コンテナ: python @ desktop-linux」と表示されているのを確認します。
+1. ターミナルを開いて、`(workspace) root@9dd39b93510f:/workspace#`のように表示されていることを確認します。
+1. `python --version`を実行してPythonのバージョンが`Python 3.12.8`と表示されることを確認します。
+1. `streamlit run app/app.py`を実行して、アプリが起動したら成功です。やったね！
 
 ## その他の使い方
 
