@@ -11,7 +11,7 @@
 
 1. このリポジトリをクローンします。
 2. VS Codeを開きます。
-3. Remote-Containers拡張機能をインストールします。
+3. [Dev ContainersというVS Codeの拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)をインストールします。
 4. 左下の「><」をクリックして、コマンドパレットを開きます。
 5. `Remote-Containers: Reopen in Container`を選択します。
 6. コンテナの起動と同時に新しいウィンドウが開き、画面左下に「開発コンテナ: python @ desktop-linux」と表示されているのを確認します。
